@@ -1,0 +1,107 @@
+/*3개의 원 애니메이션 설정*/
+@keyframes circle {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*5개의 직사각형 애니메이션 설정*/
+@keyframes square {
+  0% {
+    transform: scaleY(1);
+  }
+  25% {
+    transform: scaleY(2);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*body 설정*/
+body {
+  background-color: rgb(77, 192, 186);
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/*div 공통 부분 설정*/
+div {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*3개의 원을 포함한 div 설정(애니메이션, 크기)*/
+body > :nth-child(1) {
+  background-color: rgb(77, 192, 186);
+  height: 27px;
+
+  animation: circle 2s ease-in-out infinite;
+}
+
+/*5개의 직사각형을 포함한 div 설정(애니메이션, 크기)*/
+body > :nth-child(2) {
+  background-color: rgb(77, 192, 186);
+  width: 100px;
+  height: 120px;
+  margin: 10px;
+}
+
+/*3개의 원 설정(크기...)*/
+body > :nth-child(1) > div {
+  width: 6px;
+  height: 6px;
+
+  margin: 7px;
+  border-radius: 50%;
+}
+
+/*5개의 직사각형 설정(크기..)*/
+body > :nth-child(2) > div {
+  width: 6px;
+  height: 25px;
+
+  margin: 2px;
+}
+
+/*5개의 사각형 애니메이션 설정*/
+body > :nth-child(2) > :nth-child(1) {
+  animation: square 1s ease-in-out infinite;
+}
+body > :nth-child(2) > :nth-child(2) {
+  animation: square 1s ease-in-out infinite;
+  animation-delay: 0.1s;
+}
+body > :nth-child(2) > :nth-child(3) {
+  animation: square 1s 0.2s ease-in-out infinite;
+  animation-delay: 0.2s;
+}
+body > :nth-child(2) > :nth-child(4) {
+  animation: square 1s 0.3s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+body > :nth-child(2) > :nth-child(5) {
+  animation: square 1s 0.4s ease-in-out infinite;
+  animation-delay: 0.4s;
+}
